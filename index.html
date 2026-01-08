@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Mini App</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Шапка -->
+        <header class="header">
+            <div class="user-info">
+                <div class="avatar" id="avatar">👤</div>
+                <div>
+                    <h1 id="userName">Загрузка...</h1>
+                    <p id="userLevel">Уровень 1</p>
+                </div>
+            </div>
+            <div class="balance">
+                <span>💰</span>
+                <span id="balance">0</span>
+            </div>
+        </header>
+
+        <!-- Главный блок -->
+        <main class="main">
+            <!-- Кликер -->
+            <div class="card clicker-card">
+                <div class="clicker" id="clicker">
+                    <span class="clicker-emoji">🪙</span>
+                    <div class="clicker-ring"></div>
+                </div>
+                <p class="clicker-text">Нажми чтобы заработать!</p>
+                <p class="click-value">+<span id="clickValue">1</span> за клик</p>
+            </div>
+
+            <!-- Статистика -->
+            <div class="card">
+                <h2>📊 Статистика</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-value" id="totalClicks">0</span>
+                        <span class="stat-label">Кликов</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="totalEarned">0</span>
+                        <span class="stat-label">Заработано</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-value" id="level">1</span>
+                        <span class="stat-label">Уровень</span>
+                    </div>
+                </div>
+                
+                <!-- Прогресс бар -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress" id="expProgress"></div>
+                    </div>
+                    <p class="progress-text"><span id="currentExp">0</span>/<span id="expNeeded">100</span> XP</p>
+                </div>
+            </div>
+
+            <!-- Улучшения -->
+            <div class="card">
+                <h2>⬆️ Улучшения</h2>
+                <div class="upgrades" id="upgrades">
+                    <!-- Заполняется через JS -->
+                </div>
+            </div>
+
+            <!-- Ежедневный бонус -->
+            <div class="card bonus-card">
+                <h2>🎁 Ежедневный бонус</h2>
+                <button class="btn btn-bonus" id="bonusBtn">
+                    Получить +100 💰
+                </button>
+                <p class="bonus-timer" id="bonusTimer"></p>
+            </div>
+        </main>
+
+        <!-- Всплывающие монеты -->
+        <div id="floatingCoins"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
